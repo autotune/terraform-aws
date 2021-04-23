@@ -4,5 +4,5 @@ terraform {
     key    = "badams-dev.tf"
     region = "us-west-2"
   }
-} 
+}
 
