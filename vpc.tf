@@ -1,7 +1,7 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "builtin-${terraform.workspace}"
+  name = "${var.name}-${terraform.workspace}"
   cidr = "10.0.0.0/16"
 
   // VPC with default private and public subnets 
