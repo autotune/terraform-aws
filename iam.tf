@@ -1,5 +1,5 @@
 resource "aws_iam_role" "primary" {
-  name = "primary"
+  name = "${var.name}-primary"
 
   assume_role_policy = <<EOF
 {
@@ -20,12 +20,12 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "primary" {
-  name = "primary"
-  role = "primary"
+  name = "${var.name}-primary"
+  role = "${var.name}-primary"
 }
 
 resource "aws_iam_role_policy" "primary" {
-  name = "primary"
+  name = "${var.name}-primary"
   role = aws_iam_role.primary.id
 
   policy = <<EOF
