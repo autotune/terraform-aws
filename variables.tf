@@ -23,7 +23,7 @@ variable "ami_owner" {
 }
 
 variable "name" {
-  default = "foo"
+  default = "foobar"
 }
 
 variable "costcenter" {
