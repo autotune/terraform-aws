@@ -1,5 +1,5 @@
 resource "aws_iam_role" "primary" {
-  name = "primary"
+  name = "${var.name}-primary"
 
   assume_role_policy = <<EOF
 {
