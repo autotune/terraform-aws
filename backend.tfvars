@@ -1,4 +1,4 @@
-bucket  = "badams-foo-us-west-2"
-region  = "us-west-2"
-key     = "badams-dev.tfstate"
+bucket  = "badams-foo-eu-west-3"
+region  = "eu-west-3"
+key     = "fairwinds.tfstate"
 profile = "default"
