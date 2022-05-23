@@ -7,11 +7,11 @@ chmod +x /usr/local/bin/docker-compose
 
 git clone https://github.com/autotune/django.git
 
-cd django && docker-compose run web django-admin startproject composeexample .
+cd django && /usr/local/bin/docker-compose run web django-admin startproject composeexample .
 
 cp settings.py composeexample
 
-docker-compose up -d
+/usr/local/bin/docker-compose up -d
 
 printf '
 REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone  | sed -e "s/.$//")
