@@ -45,7 +45,15 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
       - name: Terraform Init
-        run: terraform init -backend-config=backend.tfvars 
+        run: |
+          mkdir -p ~/.aws
+          touch ~/.aws/credentials
+
+          echo "[default]
+          aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key = ${{ secrets.AWS_SECRET_KEY_ID }}
+          region = ${AWS_DEFAULT_REGION}" > ~/.aws/credentials
+          terraform init -backend-config=backend.tfvars 
    
     # Checks that all Terraform configuration files adhere to a canonical format
       - name: Terraform Format
@@ -57,11 +65,11 @@ jobs:
           mkdir -p ~/.aws
           touch ~/.aws/credentials
 
-           echo "[default]
-           aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
-           aws_secret_access_key = ${{ secrets.AWS_SECRET_KEY_ID }}
-           region = ${AWS_DEFAULT_REGION}" > ~/.aws/credentials
-           terraform plan 
+          echo "[default]
+          aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key = ${{ secrets.AWS_SECRET_KEY_ID }}
+          region = ${AWS_DEFAULT_REGION}" > ~/.aws/credentials
+          terraform plan 
            
       # On push to main, build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
