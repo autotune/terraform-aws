@@ -1,7 +1,7 @@
 #!/bin/bash
 yum install docker -y 
 service docker start
-wget https://github.com/docker/compose/releases/download/v2.5.1/docker-compose-linux-aarch64 && mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose
+wget https://github.com/docker/compose/releases/download/v2.5.1/docker-compose-linux-x86_64 && mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 echo '
