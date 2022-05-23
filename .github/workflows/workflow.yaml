@@ -31,7 +31,7 @@ jobs:
 
       - name: Initialize Terraform
         run: |
-          terraform init -input=false          
+          terraform init -input=false -backend-config=backend.tfvars         
 
       - name: Plan Terraform
         id: plan
