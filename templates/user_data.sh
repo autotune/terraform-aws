@@ -9,6 +9,10 @@ git clone https://github.com/autotune/django.git
 
 cd django && docker-compose run web django-admin startproject composeexample .
 
+cd django && cp settings.py composeexample
+
+cd django && docker-compose up -d
+
 printf '
 REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone  | sed -e "s/.$//")
 
