@@ -2,7 +2,7 @@
 resource "aws_autoscaling_group" "primary" {
   depends_on                = [aws_key_pair.briana]
   name                      = "web-${var.name}-${terraform.workspace}"
-  max_size                  = 3
+  max_size                  = 1
   min_size                  = 1
   health_check_grace_period = 10
   health_check_type         = "ELB"
