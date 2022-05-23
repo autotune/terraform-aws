@@ -1,6 +1,6 @@
 // these settings configured to demonstrate auto scale behavior, not for production
 resource "aws_autoscaling_group" "primary" {
-  depends_on                = [aws_key_pair.badams]
+  depends_on                = [aws_key_pair.briana]
   name                      = "web-${var.name}-${terraform.workspace}"
   max_size                  = 3
   min_size                  = 1
