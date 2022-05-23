@@ -8,7 +8,7 @@ variable "profile" {
 }
 
 variable "key_name" {
-  default = "badams"
+  default = "briana"
 }
 
 variable "bucket" {
