@@ -5,9 +5,9 @@ service docker start
 wget https://github.com/docker/compose/releases/download/v2.5.1/docker-compose-linux-x86_64 && mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-git clone https://github.com/autotune/dockerizing-django.git
+git clone https://github.com/autotune/django.git
 
-cd dockerizing-django && docker-compose build && docker-compose up -d 
+cd django && docker-compose run web django-admin startproject composeexample .
 
 printf '
 REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone  | sed -e "s/.$//")
