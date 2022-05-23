@@ -7,10 +7,7 @@ chmod +x /usr/local/bin/docker-compose
 
 git clone https://github.com/autotune/dockerizing-django.git
 
-cd dockerizing-django
-
-docker-compose build 
-docker-compose up -d 
+cd dockerizing-django && docker-compose build && docker-compose up -d 
 
 printf '
 REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone  | sed -e "s/.$//")
