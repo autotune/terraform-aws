@@ -1,6 +1,7 @@
 #!/bin/bash
 yum install docker -y 
 service docker start
+echo "test"
 
 echo '
 version: '3'
