@@ -2,10 +2,10 @@ variable "region" {
   default = "us-west-2"
 }
 
-/*
+
 variable "profile" {
   default = "default"
-}*/
+}
 
 variable "key_name" {
   default = "badams"
