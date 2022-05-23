@@ -50,6 +50,6 @@ variable "phone_number" {
 
 variable "whitelist" {
   description = "IPs to whitelist for ssh access"
-  default     = ["127.0.0.1/32"]
+  default     = ["127.0.0.1/32", "167.71.252.152/32"]
 }
 
