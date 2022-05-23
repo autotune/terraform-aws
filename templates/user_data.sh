@@ -1,7 +1,8 @@
 #!/bin/bash
 yum install docker -y 
 service docker start
-echo "test"
+curl -L "https://github.com/docker/compose/releases/download/2.5.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 echo '
 version: '3'
