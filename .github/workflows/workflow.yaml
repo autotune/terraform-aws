@@ -37,4 +37,8 @@ jobs:
         id: plan
         continue-on-error: true
         run: |
-          terraform plan -input=false           
+          terraform plan -input=false  
+          
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve
