@@ -53,10 +53,26 @@ jobs:
 
     # Generates an execution plan for Terraform
       - name: Terraform Plan
-        run: terraform plan 
-       
+        run: |
+          mkdir -p ~/.aws
+          touch ~/.aws/credentials
+
+           echo "[default]
+           aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
+           aws_secret_access_key = ${{ secrets.AWS_SECRET_KEY_ID }}
+           region = ${AWS_DEFAULT_REGION}" > ~/.aws/credentials
+           terrraform plan 
+           
       # On push to main, build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve 
+        run: 
+          mkdir -p ~/.aws
+          touch ~/.aws/credentials
+
+           echo "[default]
+           aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
+           aws_secret_access_key = ${{ secrets.AWS_SECRET_KEY_ID }}
+           region = ${AWS_DEFAULT_REGION}" > ~/.aws/credentials
+           terraform apply -auto-approve 
