@@ -44,15 +44,6 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
 
-
-name: Deploy Infrastructure
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
   tf_fmt:
     name: Deploy Site
     runs-on: ubuntu-latest
