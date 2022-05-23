@@ -126,7 +126,7 @@ resource "aws_launch_configuration" "primary" {
 
 resource "aws_autoscaling_attachment" "primary" {
   autoscaling_group_name = aws_autoscaling_group.primary.id
-  elb                    = module.elb_http.this_elb_id
+  elb                    = module.elb_http.elb_id
 }
 
 resource "aws_autoscaling_notification" "asg_actions" {
