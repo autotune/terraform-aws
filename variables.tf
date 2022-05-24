@@ -1,5 +1,5 @@
 variable "region" {
-  default = "us-west-2"
+  default = "eu-west-3"
 }
 
 
@@ -12,7 +12,7 @@ variable "key_name" {
 }
 
 variable "bucket" {
-  default = ""
+  default = "badams-foo-eu-west-3"
 }
 
 variable "ami_name" {
