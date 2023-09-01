@@ -1,4 +1,4 @@
-bucket  = "badams-foo-eu-west-3"
-region  = "eu-west-3"
-key     = "fairwinds.tfstate"
+bucket  = "wayofthesys2"
+region  = "us-east-2"
+key     = "briana"
 profile = "default"
